@@ -23,7 +23,7 @@ public class ChatRoomService {
             if (!createIfNotExist) {
                 return Optional.empty();
             }
-            var chatId = String.format("%s_%s", senderId, recipientId);
+            String chatId = String.format("%s_%s", senderId, recipientId);
             ChatRoom senderRecipient = ChatRoom.builder().chatId(chatId).senderId(senderId).recipientId(recipientId).build();
             ChatRoom recipientSender = ChatRoom.builder().chatId(chatId).senderId(recipientId).recipientId(senderId).build();
             chatRoomRepository.save(senderRecipient);

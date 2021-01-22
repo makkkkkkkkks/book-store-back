@@ -67,3 +67,9 @@ logging:
     messaging: trace
     web:
     socket: trace
+
+system:
+  properties:
+    java:
+      runtime:
+        version: 11.0.10
