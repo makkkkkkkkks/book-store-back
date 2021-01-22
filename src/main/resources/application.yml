@@ -67,3 +67,6 @@ logging:
     messaging: trace
     web:
     socket: trace
+java:
+  runtime:
+    version=11:
