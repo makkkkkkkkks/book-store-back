@@ -11,9 +11,7 @@ import java.util.Date;
 
 @Service
 public class TokenProvider {
-
     private static final Logger logger = LoggerFactory.getLogger(TokenProvider.class);
-
     private AppProperties appProperties;
 
     public TokenProvider(AppProperties appProperties) {
@@ -39,7 +37,6 @@ public class TokenProvider {
                 .setSigningKey(appProperties.getAuth().getTokenSecret())
                 .parseClaimsJws(token)
                 .getBody();
-
         return Long.parseLong(claims.getSubject());
     }
 
@@ -60,5 +57,4 @@ public class TokenProvider {
         }
         return false;
     }
-
 }

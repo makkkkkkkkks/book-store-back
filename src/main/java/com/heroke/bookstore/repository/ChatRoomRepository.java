@@ -13,7 +13,6 @@ import java.util.Optional;
 public interface ChatRoomRepository extends CrudRepository<ChatRoom, String> {
     Optional<ChatRoom> findBySenderIdAndRecipientId(String senderId, String recipientId);
 
-    @Query(value = "SELECT * FROM CHAT_ROOM WHERE SENDER_ID =  :id", nativeQuery = true)
-    List<ChatRoom> getAllRecipientIDs(@Param("id") Long id);
-
+    @Query(value = "SELECT * FROM CHAT_ROOM WHERE SENDER_ID=:id", nativeQuery = true)
+    List<ChatRoom> getAllRecipientIDs(@Param("id") String id);
 }

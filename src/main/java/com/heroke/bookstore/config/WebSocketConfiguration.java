@@ -31,8 +31,6 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     private TokenProvider tokenProvider;
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
-
-
     /**
      * Настраивает брокер сообщений
      *
@@ -46,7 +44,6 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
         //Установка префикса для отправки сообщений определенным юзерам
         config.setUserDestinationPrefix("/user");
     }
-
 
     /**
      * Устанавливаем перехватчик сообщений, чтобы аутентифицировать

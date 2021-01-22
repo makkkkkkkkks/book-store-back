@@ -15,7 +15,6 @@ public class BookService {
     }
 
     public List<Book> getAllUserBooks(Long id) {
-        System.out.println("BOOK - > " + bookRepository.findAllByBookOwner(id));
-        return bookRepository.findAllByBookOwner(id);
+        return null;//bookRepository.findAllByBookOwner(id);
     }
 }

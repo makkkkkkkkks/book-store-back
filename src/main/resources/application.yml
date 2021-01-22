@@ -3,21 +3,20 @@ okta:
     issuer: https://localhost:8080/oauth2/default
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/book?serverTimezone=Europe/Kiev
-    username: root
-    password: 1234
-
-
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/kykyna}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:1234}
 
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
         format_sql=true:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
   security:
     oauth2:
       client:

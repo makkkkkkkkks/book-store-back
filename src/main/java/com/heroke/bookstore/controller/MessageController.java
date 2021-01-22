@@ -32,7 +32,9 @@ public class MessageController {
         var chatId = chatRoomService.getChatId(chatMessage.getSenderId(), chatMessage.getRecipientId(), true);
         chatMessage.setChatId(chatId.get());
         ChatMessage saved = chatMessageService.save(chatMessage);
-        messagingTemplate.convertAndSendToUser(chatMessage.getRecipientId(), "/queue/messages", new ChatNotification(saved.getId(), saved.getSenderId(), saved.getSenderName()));
+        messagingTemplate.convertAndSendToUser(chatMessage.getRecipientId(),
+                "/queue/messages", new ChatNotification(saved.getId(),
+                        saved.getSenderId(), saved.getSenderName()));
     }
 
     @GetMapping("/messages/{senderId}/{recipientId}/count")
@@ -47,6 +49,6 @@ public class MessageController {
 
     @GetMapping("/messages/{id}")
     public ResponseEntity<?> findMessage(@PathVariable String id) {
-               return ResponseEntity.ok(chatMessageService.findById(id));
+        return ResponseEntity.ok(chatMessageService.findById(id));
     }
 }

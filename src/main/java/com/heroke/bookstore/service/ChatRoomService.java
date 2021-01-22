@@ -33,7 +33,7 @@ public class ChatRoomService {
     }
 
     public List<ChatRoom> getAllActiveChatRoomById(Long id) {
-        List<ChatRoom> recipientIDs = chatRoomRepository.getAllRecipientIDs(id);
+        List<ChatRoom> recipientIDs = chatRoomRepository.getAllRecipientIDs(String.valueOf(id));
         return recipientIDs;
     }
 }

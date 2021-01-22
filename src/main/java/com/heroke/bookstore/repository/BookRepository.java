@@ -14,12 +14,10 @@ import java.util.Optional;
 @Service
 @Repository
 public interface BookRepository extends CrudRepository<Book, Long> {
-    @Query(value = "SELECT * FROM BOOKS WHERE USERS_ID =  :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM BOOKS WHERE USERS_ID =  :id", nativeQuery =true)
     List<Book> findAllByBookOwner(@Param("id") Long id);
 
     List<Book> findBookByBookAuthor(String bookAuthor);
 
     Optional<Book> findById(Long id);
-
-
 }

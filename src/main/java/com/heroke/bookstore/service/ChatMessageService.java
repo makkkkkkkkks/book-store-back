@@ -13,10 +13,13 @@ import java.util.List;
 
 @Service
 public class ChatMessageService {
-    @Autowired
-    private ChatMessageRepository repository;
-    @Autowired
-    private ChatRoomService chatRoomService;
+    private final ChatMessageRepository repository;
+    private final ChatRoomService chatRoomService;
+
+    public ChatMessageService(ChatMessageRepository repository, ChatRoomService chatRoomService) {
+        this.repository = repository;
+        this.chatRoomService = chatRoomService;
+    }
 
 
     public ChatMessage save(ChatMessage chatMessage) {
@@ -51,7 +54,5 @@ public class ChatMessageService {
         messages.stream().filter(sta -> sta.getStatus().equals(MessageStatus.RECEIVED))
                 .forEach(s -> s.setStatus(MessageStatus.DELIVERED));
         messages.stream().forEach(m -> repository.save(m));
-
-
     }
 }

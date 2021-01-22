@@ -45,6 +45,7 @@ public class UserController {
 
     @GetMapping("/messages/get_active_room/")
     public ResponseEntity<?> getActiveRoom(@CurrentUser UserPrincipal userPrincipal) {
+        System.out.println("User id is () -> " + userPrincipal.getId() );
         List<Optional<User>> users = userService.getAllUsersWhoStartChat(userPrincipal.getId());
         return ResponseEntity.ok(users);
     }

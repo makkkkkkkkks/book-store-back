@@ -28,15 +28,18 @@ public class UserService {
 
     public List<Optional<User>> getAllUsersWhoStartChat(Long id) {
         List<ChatRoom> chatRooms = chatRoomService.getAllActiveChatRoomById(id);
+        chatRooms.forEach(ch-> System.out.println("Chat roooms () - > " + chatRooms));
         List<Optional<User>> users = new ArrayList<>();
         Long recipientId;
         for (int i = 0; i < chatRooms.size(); i++) {
             recipientId = Long.parseLong(chatRooms.get(i).getRecipientId());
             users.add(userRepository.findById(recipientId));
+            users.forEach(u -> System.out.println("users is ()-> " + u));
         }
         return users;
     }
-    public List<User> findAll(){
+
+    public List<User> findAll() {
         return userRepository.findAll();
     }
 }

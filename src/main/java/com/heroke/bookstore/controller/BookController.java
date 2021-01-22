@@ -1,6 +1,5 @@
 package com.heroke.bookstore.controller;
 
-
 import com.heroke.bookstore.exception.ResourceNotFoundException;
 import com.heroke.bookstore.model.Book;
 import com.heroke.bookstore.model.User;
@@ -17,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-/*@RequestMapping("book")*/
+
 public class BookController {
     private final BookRepository bookRepository;
     private UserRepository userRepository;
@@ -38,6 +37,7 @@ public class BookController {
     public Iterable<Book> booksList() {
         return bookRepository.findAll();
     }
+
     @GetMapping("book/getAllUserBooks")
     public List<Book> getAllUserBooks(@CurrentUser UserPrincipal userPrincipal) {
         System.out.println("BOOK - > " + bookService.getAllUserBooks(userPrincipal.getId()));
@@ -53,7 +53,8 @@ public class BookController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/book")
     public Book addBook(@RequestBody Book book, @CurrentUser UserPrincipal userPrincipal) {
-        User user = userRepository.findById(userPrincipal.getId()).orElseThrow(() -> new ResourceNotFoundException("User id", "id", userPrincipal.getId()));
+        User user = userRepository.findById(userPrincipal.getId()).orElseThrow(
+                () -> new ResourceNotFoundException("User id", "id", userPrincipal.getId()));
         book.setBookOwner(user);
         return bookRepository.save(book);
     }
