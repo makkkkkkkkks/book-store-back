@@ -153,16 +153,7 @@
                             <arguments>install</arguments>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>npm build</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>run buildProduction</arguments>
-                        </configuration>
-                        <phase>generate-resources</phase>
-                    </execution>
+                   git
                 </executions>
             </plugin>
             <plugin>
