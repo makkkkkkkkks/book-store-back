@@ -157,7 +157,7 @@
                         </goals>
                         <configuration>
                             <nodeVersion>v12.18.4                        </nodeVersion>
-                            <yarnVersion></yarnVersion>
+                            <yarnVersion>v1.3.2</yarnVersion>
                         </configuration>
                     </execution>
                     <execution>
