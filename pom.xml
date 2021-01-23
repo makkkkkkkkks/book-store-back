@@ -122,6 +122,7 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -157,96 +158,6 @@
                     <workingDirectory>.</workingDirectory>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
-    <profiles>
-        <profile><!-- mvnw -Pdev -->
-            <id>dev</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install node and npm</id>
-                                <goals>
-                                    <goal>install-node-and-npm</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                   <!-- <nodeVersion>v1.11.0</nodeVersion>-->
-                                    <arguments>i</arguments>
-                                </configuration>
-                                <phase>process-resources</phase>
-                            </execution>
-                            <execution>
-                                <id>npm run serve</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>run serve</arguments>
-                                </configuration>
-                                <phase>process-resources</phase>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <workingDirectory>.</workingDirectory>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>build-play-with-docker</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install node and npm</id>
-                                <goals>
-                                    <goal>install-node-and-npm</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>i</arguments>
-                                </configuration>
-                                <phase>process-resources</phase>
-                            </execution>
-                            <execution>
-                                <id>npm run build-play-with-docker</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>run build-play-with-docker</arguments>
-                                </configuration>
-                                <phase>process-resources</phase>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <workingDirectory>.</workingDirectory>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
