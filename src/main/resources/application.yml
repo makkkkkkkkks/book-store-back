@@ -1,6 +1,6 @@
 okta:
   oauth2:
-    issuer: https://localhost:8080/oauth2/default
+    issuer: https://kykyna.herokuapp.com/oauth2/default
 spring:
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/kykyna}
@@ -67,9 +67,3 @@ logging:
     messaging: trace
     web:
     socket: trace
-
-system:
-  properties:
-    java:
-      runtime:
-        version: 11.0.10
