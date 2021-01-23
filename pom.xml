@@ -182,7 +182,7 @@
                                     <goal>npm</goal>
                                 </goals>
                                 <configuration>
-                                    <nodeVersion>v1.11.0</nodeVersion>
+                                   <!-- <nodeVersion>v1.11.0</nodeVersion>-->
                                     <arguments>i</arguments>
                                 </configuration>
                                 <phase>process-resources</phase>
