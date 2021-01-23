@@ -153,24 +153,19 @@
                             <arguments>install</arguments>
                         </configuration>
                     </execution>
-                   git
+                  <!--  <execution>
+                        <id>npm build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run buildProduction</arguments>
+                        </configuration>
+                        <phase>generate-resources</phase>
+                    </execution>-->
                 </executions>
             </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
 
-                    <!-- Add frontend folder to war package -->
-                    <webResources>
-                        <resource>
-                            <directory>src\main\resources\static</directory>
-                        </resource>
-                    </webResources>
-
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
