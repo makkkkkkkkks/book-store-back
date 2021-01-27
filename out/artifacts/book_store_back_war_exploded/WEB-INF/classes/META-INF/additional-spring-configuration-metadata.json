@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.security.oauth2.client.registration.google.clientId",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.security.oauth2.client.registration.google.clientId."
+    },
+    {
+      "name": "spring.jpa.hibernate.naming-strategy",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.hibernate.naming-strategy."
+    }
+  ] }

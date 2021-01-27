@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-
+@RequestMapping("/book")
 public class BookController {
     private final BookRepository bookRepository;
     private UserRepository userRepository;
@@ -38,20 +38,19 @@ public class BookController {
         return bookRepository.findAll();
     }
 
-    @GetMapping("book/getAllUserBooks")
+    @GetMapping("/getAllUserBooks")
     public List<Book> getAllUserBooks(@CurrentUser UserPrincipal userPrincipal) {
-        System.out.println("BOOK - > " + bookService.getAllUserBooks(userPrincipal.getId()));
-
+        System.out.println("Proint all Users books () -> "+bookService.getAllUserBooks(userPrincipal.getId()));
         return bookService.getAllUserBooks(userPrincipal.getId());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/getBookById/{id}")
     public Book getBook(@PathVariable Long id) {
         return bookRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Book id", "id", id));
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/book")
+    @PostMapping("/add")
     public Book addBook(@RequestBody Book book, @CurrentUser UserPrincipal userPrincipal) {
         User user = userRepository.findById(userPrincipal.getId()).orElseThrow(
                 () -> new ResourceNotFoundException("User id", "id", userPrincipal.getId()));
@@ -59,13 +58,13 @@ public class BookController {
         return bookRepository.save(book);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/updateBookByIdd/{id}")
     public Book updateBook(@PathVariable("id") Book bookFromDB, @RequestBody Book bookFromUser) {
         BeanUtils.copyProperties(bookFromUser, bookFromDB, "id");
         return bookRepository.save(bookFromUser);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/deleteById/{id}")
     public void deleteBook(@PathVariable("id") Book book) {
         bookRepository.delete(book);
     }

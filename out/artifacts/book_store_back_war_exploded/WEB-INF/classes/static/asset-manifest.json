@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3c98d79.chunk.css",
+    "main.js": "/static/js/main.6b427770.chunk.js",
+    "main.js.map": "/static/js/main.6b427770.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cb3b2fb2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cb3b2fb2.js.map",
+    "static/css/2.79c12266.chunk.css": "/static/css/2.79c12266.chunk.css",
+    "static/js/2.1e60fbd5.chunk.js": "/static/js/2.1e60fbd5.chunk.js",
+    "static/js/2.1e60fbd5.chunk.js.map": "/static/js/2.1e60fbd5.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fd2bd176180ef750622b362409c60baa.js": "/precache-manifest.fd2bd176180ef750622b362409c60baa.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.79c12266.chunk.css.map": "/static/css/2.79c12266.chunk.css.map",
+    "static/css/main.c3c98d79.chunk.css.map": "/static/css/main.c3c98d79.chunk.css.map",
+    "static/js/2.1e60fbd5.chunk.js.LICENSE.txt": "/static/js/2.1e60fbd5.chunk.js.LICENSE.txt",
+    "static/media/firts.jpg": "/static/media/firts.2cfe7c86.jpg",
+    "static/media/google-logo.png": "/static/media/google-logo.36158af3.png",
+    "static/media/second.jpg": "/static/media/second.150fea20.jpg",
+    "static/media/thirst.jpg": "/static/media/thirst.aaca6b3b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cb3b2fb2.js",
+    "static/css/2.79c12266.chunk.css",
+    "static/js/2.1e60fbd5.chunk.js",
+    "static/css/main.c3c98d79.chunk.css",
+    "static/js/main.6b427770.chunk.js"
+  ]
+}
